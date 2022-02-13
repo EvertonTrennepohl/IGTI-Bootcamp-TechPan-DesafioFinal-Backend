@@ -23,10 +23,6 @@ public class ClienteService {
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	private final ClienteMapper clienteMapper = ClienteMapper.INSTANCE;
-	
-//	public ClienteService(BCryptPasswordEncoder bCryptPasswordEncoder) {
-//		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-//	}
 
 	public ClienteDTO salvaCliente(ClienteDTO clienteDTO) {
 		clienteDTO.setSenha(bCryptPasswordEncoder.encode(clienteDTO.getSenha()));

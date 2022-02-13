@@ -1,6 +1,10 @@
 
 -- Este script é executado automaticamente pelo Spring Boot para inserir dados iniciais no banco de dados.
 
+insert into cliente values
+(10, 'Everton Trennepohl', 'gauchotp@gmail.com','$2a$10$zUtjkjWNY5IyeqkvRRnkYOq3RVRycJO0JTUJuoBcCwsgias9k7Vu.',
+    'Rua Elemar Fensterseifer, Nº 469, Bairro Glória, Três Passos - RS');
+
 insert into produto values
 (1, 'Sanduiches de Boi', 'Hamburguer', 14.5),
 (2, 'Sanduiches de Boi', 'X - Burguer', 16.0),
