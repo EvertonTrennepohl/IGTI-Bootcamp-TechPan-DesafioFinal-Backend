@@ -9,4 +9,5 @@ public class SecurityConstants {
 	public static final String HEADER_STRING = "Authorization";
 	public static final String SIGN_UP_URL = "/login";
 	public static final String STATUS_URL = "/status";
+	public static final String CARDAPIO_URL = "/cardapio";
 }
