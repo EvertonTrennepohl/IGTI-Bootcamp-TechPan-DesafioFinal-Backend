@@ -11,12 +11,4 @@ public class DesafioFinalApplication implements WebMvcConfigurer {
 	public static void main(String[] args) {
 		SpringApplication.run(DesafioFinalApplication.class, args);
 	}
-
-	@Override
-	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**")
-			.allowedOrigins("http://localhost:4200")
-			.allowedMethods("*")
-			.allowCredentials(true);
-	}
 }
