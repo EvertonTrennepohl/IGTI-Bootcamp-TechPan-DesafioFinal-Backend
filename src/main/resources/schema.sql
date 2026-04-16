@@ -1,10 +1,10 @@
 
 -- Este script é executado automaticamente pelo Spring Boot para criar a estrutura do banco de dados. 
 
-create sequence pedido_seq start 100 increment 1;
-create sequence cliente_seq start 10 increment 1;
+create sequence if not exists pedido_seq start 100 increment 1;
+create sequence if not exists cliente_seq start 10 increment 1;
 
-create table cliente (
+create table if not exists cliente (
 	id_cliente int not null,
 	nome varchar(100) not null,
 	email varchar(100) not null,
@@ -13,7 +13,7 @@ create table cliente (
 	constraint cliente_pk primary key (id_cliente)
 );
 
-create table produto (
+create TABLE if not exists produto (
     id_produto int not null,
     categoria varchar(100) not null,
     descricao varchar(200) not null,
@@ -21,19 +21,21 @@ create table produto (
     constraint produto_pk primary key (id_produto)
 );
 
-create table pedido (
+create table if not exists pedido (
     id_pedido int not null,
-    data_hora datetime not null,
+    data_hora timestamp not null,
+    id_cliente int not null,
     situacao varchar(100) not null,
     constraint pedido_pk primary key (id_pedido)
 );
 
-create table item_pedido (
+create table if not exists item_pedido (
     id_pedido int not null,
     id_produto int not null,
     quantidade int not null,
     constraint item_pedido_pk primary key (id_pedido, id_produto)
 );
 
+alter table pedido add constraint pedido_cliente_fk foreign key (id_cliente) references cliente(id_cliente);
 alter table item_pedido add constraint item_pedido_fk1 foreign key (id_pedido) references pedido(id_pedido) on delete cascade;
 alter table item_pedido add constraint item_pedido_fk2 foreign key (id_produto) references produto(id_produto) on delete restrict;

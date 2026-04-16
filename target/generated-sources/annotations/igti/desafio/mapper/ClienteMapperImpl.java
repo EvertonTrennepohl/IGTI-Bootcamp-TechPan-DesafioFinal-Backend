@@ -8,8 +8,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-09-01T09:14:35-0300",
-    comments = "version: 1.3.1.Final, compiler: Eclipse JDT (IDE) 1.4.50.v20210914-1429, environment: Java 17.0.1 (Eclipse Adoptium)"
+    date = "2026-04-16T00:05:18-0300",
+    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.13 (Azul Systems, Inc.)"
 )
 public class ClienteMapperImpl implements ClienteMapper {
 
@@ -21,11 +21,11 @@ public class ClienteMapperImpl implements ClienteMapper {
 
         ClienteBuilder cliente = Cliente.builder();
 
-        cliente.email( clienteDTO.getEmail() );
-        cliente.endereco( clienteDTO.getEndereco() );
         cliente.id( clienteDTO.getId() );
         cliente.nome( clienteDTO.getNome() );
+        cliente.email( clienteDTO.getEmail() );
         cliente.senha( clienteDTO.getSenha() );
+        cliente.endereco( clienteDTO.getEndereco() );
 
         return cliente.build();
     }
@@ -38,11 +38,11 @@ public class ClienteMapperImpl implements ClienteMapper {
 
         ClienteDTOBuilder clienteDTO = ClienteDTO.builder();
 
-        clienteDTO.email( cliente.getEmail() );
-        clienteDTO.endereco( cliente.getEndereco() );
         clienteDTO.id( cliente.getId() );
         clienteDTO.nome( cliente.getNome() );
+        clienteDTO.email( cliente.getEmail() );
         clienteDTO.senha( cliente.getSenha() );
+        clienteDTO.endereco( cliente.getEndereco() );
 
         return clienteDTO.build();
     }
