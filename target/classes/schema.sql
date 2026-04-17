@@ -36,6 +36,6 @@ create table if not exists item_pedido (
     constraint item_pedido_pk primary key (id_pedido, id_produto)
 );
 
-alter table pedido add constraint pedido_cliente_fk foreign key (id_cliente) references cliente(id_cliente);
-alter table item_pedido add constraint item_pedido_fk1 foreign key (id_pedido) references pedido(id_pedido) on delete cascade;
-alter table item_pedido add constraint item_pedido_fk2 foreign key (id_produto) references produto(id_produto) on delete restrict;
+-- alter table pedido add constraint pedido_cliente_fk foreign key (id_cliente) references cliente(id_cliente);
+-- alter table item_pedido add constraint item_pedido_fk1 foreign key (id_pedido) references pedido(id_pedido) on delete cascade;
+-- alter table item_pedido add constraint item_pedido_fk2 foreign key (id_produto) references produto(id_produto) on delete restrict;
