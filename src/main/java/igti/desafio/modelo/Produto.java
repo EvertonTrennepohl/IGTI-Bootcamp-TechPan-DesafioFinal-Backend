@@ -17,7 +17,7 @@ public class Produto {
 	@Column(name = "descricao")
 	private String descricao;
 
-	@Column(name = "preco")
+	@Column(name = "preco", columnDefinition = "numeric(8,2)")
 	private Double preco;
 
 	public Integer getId() {
