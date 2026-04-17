@@ -4,7 +4,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Estagio de Execucao (Usa JRE 11 slim para ser mais leve)
-FROM openjdk:11-jre-slim
+FROM eclipse-temurin:11-jre-focal
 COPY --from=build /target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
